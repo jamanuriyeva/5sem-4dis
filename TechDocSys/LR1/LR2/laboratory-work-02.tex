@@ -1,0 +1,188 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT AND RUSSIAN LANGUAGE SUPPORT
+%----------------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Нуриева Джамиля} \\[7.5pt]
+\href{mailto:your.email@example.com}{\raisebox{-0.05\height}\faEnvelope \ your.email@example.com} \ $|$ \ 
+\href{tel:+79111234567}{\raisebox{-0.05\height}\faMobile \ +7 (911) 123-45-67} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{О себе}
+Студентка 3-го курса РГПУ им. А. И. Герцена, Института информационных технологий и технологического образования. Обучаюсь по направлению "Информатика и вычислительная техника", профиль "Технологии разработки программного обеспечения и обработки больших данных". Ищу возможности для стажировки и применения полученных знаний на практике. Обладаю высоким уровнем гибких навыков (Soft Skills), таких как коммуникабельность, общительность, способность к работе в команде, умение быстро обучаться и обучать других. Имею грамоты и благодарственные письма от РГПУ им. А. И. Герцена, Комитета по молодежной политике Санкт-Петербурга и Законодательного собрания Санкт-Петербурга.
+
+%Experience
+\section{Опыт работы}
+Опыта коммерческой работы пока нет. Готова применять и развивать свои знания и навыки в реальных проектах.
+
+%Projects
+\section{Проекты и Достижения}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Учебные и личные проекты} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Разработка учебных проектов в рамках курса по программированию на Python и JavaScript. Изучение и применение технологий для работы с базами данных (MySQL) и контейнеризации (Docker). }  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Образование}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2023 -- настоящее время & \textbf{РГПУ им. А. И. Герцена}, Институт информационных технологий и технологического образования \\ 
+& Направление: "Информатика и вычислительная техника" \\
+& Профиль: "Технологии разработки программного обеспечения и обработки больших данных" \\
+& 3 курс \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Навыки и Технологии}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Гибкие навыки (Soft Skills) &  \normalsize{Коммуникабельность, общительность, работа в команде, быстрая обучаемость, умение обучать других}\\
+Языки программирования и технологии  &  \normalsize{Python, JavaScript} \\  
+Базы данных & \normalsize{MySQL} \\
+Инструменты & \normalsize{Git, Docker, VS Code} \\
+\end{tabularx}
+
+\section{Дополнительная информация}
+\begin{itemize}
+    \item Грамоты и благодарственные письма от РГПУ им. А. И. Герцена.
+    \item Благодарности от Комитета по молодежной политике и взаимодействию с общественными организациями Санкт-Петербурга.
+    \item Благодарности от Законодательного собрания Санкт-Петербурга.
+\end{itemize}
+
+\vfill
+\center{\footnotesize Обновлено: \today}
+
+\end{document}
