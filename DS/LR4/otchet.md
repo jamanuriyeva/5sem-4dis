@@ -100,6 +100,7 @@ fitted_ar = model_ar.fit()
 Улучшение точности: В 2.35 раза лучше чем экспоненциальное сглаживание
 
 ## Графики
-![](D:\PycharmProjects\MODULE-4DIS\LR4\pics\Снимок экрана 2025-10-21 210200.png)
-![](Снимок экрана 2025-10-21 210212.png)
-![](Снимок экрана 2025-10-21 210226.png)
+![](https://github.com/jamanuriyeva/5sem-4dis/blob/bb238cccf1a22895dd1ee7aa517550fe4076fa12/DS/LR4/pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-10-21%20210200.png)
+![](https://github.com/jamanuriyeva/5sem-4dis/blob/bb238cccf1a22895dd1ee7aa517550fe4076fa12/DS/LR4/pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-10-21%20210212.png))
+![](https://github.com/jamanuriyeva/5sem-4dis/blob/bb238cccf1a22895dd1ee7aa517550fe4076fa12/DS/LR4/pics/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-10-21%20210226.png)
+
