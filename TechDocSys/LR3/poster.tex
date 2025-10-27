@@ -1,0 +1,120 @@
+\documentclass[a0paper,portrait]{tikzposter}
+
+% ---------- Поддержка кириллицы ----------
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{FreeSerif}
+\setsansfont{FreeSans}
+\setmonofont{FreeMono}
+
+% ---------- Пакеты ----------
+\usepackage{amsmath,amssymb,graphicx,tikz}
+
+% ---------- Цветовая палитра в розовых тонах ----------
+\definecolor{mypink}{RGB}{255,182,193}     % светло-розовый
+\definecolor{mypink2}{RGB}{255,105,180}    % яркий розовый
+\definecolor{myviolet}{RGB}{219,112,147}   % розово-фиолетовый
+\definecolor{mybg}{RGB}{255,240,245}       % нежный фон
+
+% ---------- Оформление темы ----------
+\usetheme{Simple}
+\useblockstyle[roundedcorners=25, linewidth=2pt, titleinnersep=8pt, bodyinnersep=10pt]{Default}
+\definecolorstyle{pinkstyle}{
+  \definecolor{backgroundcolor}{named}{mybg}
+  \definecolor{blocktitlebgcolor}{named}{mypink2}
+  \definecolor{blocktitlefgcolor}{named}{white}
+  \definecolor{blockbodybgcolor}{named}{white}
+  \definecolor{blockbodyfgcolor}{named}{black}
+  \definecolor{titlefgcolor}{named}{black}
+  \definecolor{framecolor}{named}{mybg}
+  \definecolor{titlebgcolor}{named}{mybg} % ← фон заголовка белый!
+}{}
+\usecolorstyle{pinkstyle}
+
+% ---------- Заголовок ----------
+\title{Создание фрактального изображения с использованием OnlineTools}
+\author{Нуриева Джамиля Эльхановна}
+\institute{РГПУ им. А. И. Герцена}
+\titlegraphic{
+\vspace{-2cm}
+\centering
+\includegraphics[width=10cm]{logo.png}\\[1cm]
+}
+
+\begin{document}
+\maketitle
+
+% ---------- Abstract ----------
+\block{Аннотация}{
+Работа посвящена созданию фрактального изображения «Дерево Пифагора» с использованием онлайн-сервиса \textbf{OnlineTools}. 
+Исследованы свойства самоподобных структур, параметры фрактала (угол ветвления, глубина рекурсии и масштаб), 
+а также создано изображение с заданными параметрами.
+}
+
+% ---------- Introduction ----------
+\block{Введение}{
+Фракталы — это самоподобные геометрические структуры, в которых части подобны целому. 
+Термин «фрактал» был предложен Бенуа Мандельбротом в 1975 году. 
+Фракталы применяются в компьютерной графике, моделировании природных объектов и анализе сложных систем. 
+В данной работе рассматривается построение фрактала «Дерево Пифагора».
+}
+
+% ---------- Methods ----------
+\block{Методы}{
+Для генерации фрактала использован веб-сервис \textbf{OnlineTools} 
+(\texttt{https://onlinetools.com/math/generate-pythagoras-tree}). 
+Он позволяет изменять параметры:
+\begin{itemize}
+\item угол ветвления $\alpha$;
+\item глубину рекурсии $n$;
+\item коэффициент масштабирования $k$;
+\item цветовую палитру и размер canvas.
+\end{itemize}
+
+\vspace{6pt}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \filldraw[fill=mypink!60!white,draw=myviolet,thick] (0,0) rectangle (2,2);
+  \begin{scope}[shift={(0.5,2)}, rotate=55]
+    \filldraw[fill=myviolet!50!white,draw=myviolet,thick] (0,0) rectangle (1.4,1.4);
+  \end{scope}
+  \begin{scope}[shift={(1.5,2)}, rotate=10]
+    \filldraw[fill=mypink2!40!white,draw=myviolet,thick] (0,0) rectangle (1.3,1.3);
+  \end{scope}
+  \node at (1,-0.8) {Схема «Дерева Пифагора»};
+\end{tikzpicture}
+\end{center}
+}
+
+% ---------- Results ----------
+\block{Результаты}{
+После настройки параметров ($n=10$, $\alpha=45^\circ$, $k=0.7$) 
+получено фрактальное изображение, демонстрирующее самоподобие.  
+Сервис позволяет экспортировать изображение и изменять палитры в реальном времени.  
+\begin{itemize}
+\item Пример параметров: 600×600 px, 10 итераций, градиентная палитра.  
+\item При $n>12$ мелкие детали становятся неразличимыми.
+\end{itemize}
+}
+
+% ---------- Conclusions ----------
+\block{Выводы}{
+\begin{itemize}
+\item Изучены теоретические основы фракталов и «Дерева Пифагора»;
+\item Проанализирован веб-сервис OnlineTools;
+\item Создано изображение с параметрами $n=10$, $\alpha=45^\circ$, $k=0.7$;
+\item Подтверждено свойство самоподобия.
+\end{itemize}
+}
+
+% ---------- References ----------
+\block{Список литературы}{
+1. Сергеев Л. \emph{Фракталы: что это такое и какие они бывают}. — Skillbox, 2025.\\
+2. Башкиров С. \emph{Что такое фракталы: сложные формы из простых правил}. — РБК, 2025.\\
+3. Трошина Г. В. \emph{Математические методы обработки данных в инженерной практике}. — НГТУ, 2023.\\
+4. Иудин Д. И., Копосов Е. В. \emph{Фракталы: от простого к сложному}. — ННГАСУ, 2012.
+}
+
+\end{document}
