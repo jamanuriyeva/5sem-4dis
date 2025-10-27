@@ -93,3 +93,7 @@ python alien_invasion.py
 ```
 
 ## Скриншоты
+
+![](https://github.com/jamanuriyeva/5sem-4dis/blob/c3855d917b21fa3c5808cff90862868f04d80110/Math%20for%20comp%20graphics/PR1/images/play.png)
+
+![](https://github.com/jamanuriyeva/5sem-4dis/blob/c3855d917b21fa3c5808cff90862868f04d80110/Math%20for%20comp%20graphics/PR1/images/game.png)
